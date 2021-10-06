@@ -7,21 +7,8 @@ for (let count = 0; count < NO_OF_NUMBERS; count++) {
 }
 
 let numbersCopy = [...numbers];
-let max = numbersCopy.reduce((a, b) => {
-  return Math.max(a, b);
-});
-numbersCopy.splice(numbersCopy.indexOf(max), 1);
-max = numbersCopy.reduce((a, b) => {
-  return Math.max(a, b);
-});
-console.log("Second Largest " + max);
+numbersCopy.sort();
 
-numbersCopy = [...numbers];
-let min = numbersCopy.reduce((a, b) => {
-  return Math.min(a, b);
-});
-numbersCopy.splice(numbersCopy.indexOf(min), 1);
-min = numbersCopy.reduce((a, b) => {
-  return Math.min(a, b);
-});
-console.log("Second Smallest " + min);
+console.log("Second Smallest " + numbersCopy[1]);
+
+console.log("Second Largest " + numbersCopy[numbersCopy.length - 2]);
